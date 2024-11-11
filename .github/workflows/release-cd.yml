@@ -22,7 +22,6 @@ env:
 
 jobs:
   publish:
-    if: ${{ github.repository_owner == 'rustic-rs' }}
     name: Publishing ${{ matrix.job.target }}
     runs-on: ${{ matrix.job.os }}
     strategy:
@@ -157,7 +156,6 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
   result:
-    if: ${{ github.repository_owner == 'rustic-rs' }}
     name: Result (Release CD)
     runs-on: ubuntu-latest
     needs:
