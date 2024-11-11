@@ -117,13 +117,7 @@ jobs:
           binary-name: ${{ env.BINARY_NAME }}
           package-secondary-name: ${{ matrix.job.target}}
           github-token: ${{ secrets.GITHUB_TOKEN }}
-          gpg-release-private-key: ${{ secrets.GPG_RELEASE_PRIVATE_KEY }}
-          gpg-passphrase: ${{ secrets.GPG_PASSPHRASE }}
-          rsign-release-private-key: ${{ secrets.RSIGN_RELEASE_PRIVATE_KEY }}
-          rsign-passphrase: ${{ secrets.RSIGN_PASSPHRASE }}
           github-ref: ${{ github.ref }}
-          sign-release: true
-          hash-release: true
           use-project-version: true
           use-tag-version: true # IMPORTANT: this is being used to make sure the tag that is built is in the archive filename, so automation can download the correct version
           extra-cargo-build-args: --features release
